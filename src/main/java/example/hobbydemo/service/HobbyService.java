@@ -10,14 +10,14 @@ import java.util.List;
 
 public class HobbyService {
     @Autowired
-    private HobbyRepository userRepository;
+    private HobbyRepository hobbyRepository;
 
     private boolean existsById(Long id) {
         return HobbyRepository.existsById(id);
     }
 
     public Hobby findById(Long id) {
-        return userRepository.findById(id).orElse(null);
+        return hobbyRepository.findById(id).orElse(null);
     }
     public Hobby save(Hobby hobby) throws Exception {
         if (StringUtils.isEmpty(hobby.getType())) {
